@@ -1,0 +1,83 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page session="true" %>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Título de la Página (MODIFICAR)</title>
+    <link rel="stylesheet" href=general.css"><!-- Estilos externos -->
+    <!-- Puedes incluir fuentes personalizadas o íconos aquí -->
+</head>
+
+<body>
+
+<header>
+    <div class="banner">
+        <img src="img/logo.png" alt="Logo Elite Fashion" class="logo">
+        <div class="busqueda-redes">
+            <a href="https://www.google.com" target="_blank">
+                <img src="img/search-icon.png" alt="Buscar">
+            </a>
+            <a href="https://www.instagram.com" target="_blank">
+                <img src="img/instagram.png" alt="Instagram">
+            </a>
+            <a href="https://www.facebook.com" target="_blank">
+                <img src="img/facebook.png" alt="Facebook">
+            </a>
+        </div>
+    </div>
+    <nav>
+        <ul class="menu-principal">
+            <li><a href="home.jsp">Inicio</a></li>
+            <li><a href="clientes.jsp">Clientes</a></li>
+            <li><a href="inventario.jsp">Inventario</a></li>
+            <li><a href="pedidos.jsp">Pedidos</a></li>
+            <li><a href="proveedores.jsp">Proveedores</a></li>
+            <li><a href="sobre.jsp">Sobre Nosotros</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section>
+        <!-- CONTENIDO CAMBIANTE SEGÚN LA PÁGINA -->
+        <h1>Título de la sección</h1>
+        <p>Texto de introducción o explicación.</p>
+
+        <!-- Por ejemplo: Formulario de login -->
+        <form action="LoginServlet" method="post">
+            <label for="usuario">Usuario:</label>
+            <input type="text" id="usuario" name="usuario" required>
+
+            <label for="contrasena">Contraseña:</label>
+            <input type="password" id="contrasena" name="contrasena" required>
+
+            <input type="submit" value="Iniciar Sesión">
+        </form>
+
+        <%-- Comentario JSP: aquí va lógica de autenticación o mostrar errores --%>
+        <% 
+           String error = (String) request.getAttribute("error");
+           if (error != null) {
+        %>
+            <p class="error"><%= error %></p>
+        <% } %>
+
+    </section>
+</main>
+
+<footer>
+    <nav class="menu-footer">
+        <ul>
+            <li><a href="home.jsp">Inicio</a></li>
+            <li><a href="clientes.jsp">Clientes</a></li>
+            <li><a href="inventario.jsp">Inventario</a></li>
+            <li><a href="pedidos.jsp">Pedidos</a></li>
+            <li><a href="logout.jsp">Logout</a></li>
+        </ul>
+    </nav>
+    <p>&copy; 2025 Elite Fashion. Todos los derechos reservados.</p>
+</footer>
+
+</body>
+</html>
