@@ -8,7 +8,9 @@
 /* Estilos generales */
 body {
     font-family: Arial, sans-serif;
-    background-color: #fff;
+    background-color: #fef5e7;
+    min-height: 100vh;
+    color: #333;
 }
 
 /* Títulos con fuente diferente*/
@@ -147,4 +149,116 @@ footer {
     margin-top: 10px;
     color: rgb(88, 43, 5);
     text-decoration: none;
+}
+
+/* Contenedor principal de secciones */
+.seccion {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 1200px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+/* Título principal */
+.titulo-seccion {
+    color:#a3824f; ;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 700;
+}
+
+/* Contenedor de noticias */
+.grid-noticias {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* Tarjeta individual */
+.tarjeta-noticia {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.tarjeta-noticia:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.icono-tarjeta {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+/* seccion de dashboard */
+.dashboard-cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.card {
+    flex: 1 1 200px;
+    color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    background-color: #a3824f; 
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-value {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.card-label {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+}
+/* ==== Tarjetas de noticias con imagen ==== */
+.card-noticia {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;      /* quita subrayado */
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;           /* recorta imagen */
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    transition: transform 0.25s ease;
+    color: var(--color-texto);  /* texto oscuro */
+}
+
+.card-noticia img {
+    width: 100%;
+    height: 130px;              /* alto fijo para miniatura */
+    object-fit: cover;          /* recorte elegante */
+}
+
+.card-noticia h3 {
+    padding: 1rem;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.card-noticia:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
 }
