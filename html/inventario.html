@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Inventario</title>
+    <link rel="stylesheet" href="../css/inventario.css">
+</head>
+<body>
+
+    <!-- ENCABEZADO -->
+    <header>
+        <div class="banner">
+            <!-- Logo -->
+            <img src="../imagenes/LOGOO.png" alt="Logo" class="logo">
+
+        <!-- Barra de búsqueda-->
+        <form class="busqueda" action="https://www.google.com/search" method="GET" target="_blank">
+            <input type="text" name="q" placeholder="Buscar...">
+            <button type="submit">
+                <img src="../imagenes/iconobusqueda.png" alt="Buscar" class="icono-buscar">
+            </button>
+        </form>
+
+
+            <!-- Redes sociales -->
+            <div class="redes">
+                <a href="#"><img src="../imagenes/iconoFacebook.png" alt="Facebook"></a>
+                <a href="#"><img src="../imagenes/iconoInstagram.png" alt="Instagram"></a>
+                <a href="#"><img src="../imagenes/iconotwiter.png" alt="Twitter"></a>
+            </div>
+    </header>
+
+        <!-- Menú principal de navegación -->
+        <nav class="menu-principal">
+            <ul>
+                <li><a href="home.html">Inicio</a></li>
+                <li><a href="Inventario.html">Inventario</a></li>
+                <li><a href="cliente.html">Clientes</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+            </ul>
+        </nav>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Inventario</h1>
+            <p>Gestiona tus productos y controla el stock</p>
+        </div>
+
+        <!-- Estadísticas -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-content">
+                    <div class="stat-info">
+                        <p class="stat-label">Total Productos</p>
+                        <p class="stat-value" id="totalProducts">0</p>
+                    </div>
+                    <i class="fas fa-box stat-icon blue"></i>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-content">
+                    <div class="stat-info">
+                        <p class="stat-label">Stock Bajo</p>
+                        <p class="stat-value yellow" id="lowStockProducts">0</p>
+                    </div>
+                    <i class="fas fa-exclamation-triangle stat-icon yellow"></i>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-content">
+                    <div class="stat-info">
+                        <p class="stat-label">Sin Stock</p>
+                        <p class="stat-value red" id="outOfStockProducts">0</p>
+                    </div>
+                    <i class="fas fa-exclamation-triangle stat-icon red"></i>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-content">
+                    <div class="stat-info">
+                        <p class="stat-label">Valor Total</p>
+                        <p class="stat-value green" id="totalValue">$0.00</p>
+                    </div>
+                    <i class="fas fa-dollar-sign stat-icon green"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controles -->
+        <div class="controls">
+            <div class="controls-left">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Buscar productos...">
+                </div>
+                
+                <div class="filter-box">
+                    <i class="fas fa-filter"></i>
+                    <select id="categoryFilter">
+                        <option value="">Todas las categorías</option>
+                    </select>
+                </div>
+            </div>
+            
+            <button class="btn btn-primary" id="addProductBtn">
+                <i class="fas fa-plus"></i>
+                Agregar Producto
+            </button>
+        </div>
+
+        <!-- Tabla de productos -->
+        <div class="table-container">
+            <table class="products-table">
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Categoría</th>
+                        <th>SKU</th>
+                        <th>Precio</th>
+                        <th>Stock</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="productsTableBody">
+                </tbody>
+            </table>
+            
+            <div class="empty-state" id="emptyState" style="display: none;">
+                <i class="fas fa-box"></i>
+                <p>No se encontraron productos</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para agregar/editar producto -->
+    <div class="modal" id="productModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Agregar Producto</h2>
+                <button class="close-btn" id="closeModal">&times;</button>
+            </div>
+            
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Nombre *</label>
+                    <input type="text" id="productName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Categoría *</label>
+                    <input type="text" id="productCategory" required>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Precio *</label>
+                        <input type="number" id="productPrice" step="0.01" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>SKU *</label>
+                        <input type="text" id="productSku" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Stock *</label>
+                        <input type="number" id="productStock" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Stock Mínimo *</label>
+                        <input type="number" id="productMinStock" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Descripción</label>
+                    <textarea id="productDescription" rows="3"></textarea>
+                </div>
+            </div>
+            
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="saveProductBtn">Agregar</button>
+                <button class="btn btn-secondary" id="cancelBtn">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../JS/inventario.js"></script>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <!-- Menú secundario -->
+        <nav class="menu-secundario">
+            <ul>
+                <li><a href="home.html">Inicio</a></li>
+                <li><a href="nosotros.html">Sobre Nosotros</a></li>
+                <li><a href="consultas.html">Consultas</a></li>
+                <li><a href="registro.html">Registro</a></li>
+            </ul>
+        </nav>
+
+        <!-- Derechos -->
+        <p>&copy; 2025 ELITE FASHION . Todos los derechos reservados.</p>
+
+        <!-- Logout -->
+        <a href="login.html" class="logout">Cerrar sesión</a>
+    </footer>
+</body>
+</html>
