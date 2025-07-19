@@ -14,17 +14,17 @@
         </div>
         
         <form id="registerForm">
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="firstName">Nombre</label>
-                    <input type="text" id="firstName" name="firstName" required>
-                </div>
-                <div class="form-group">
-                    <label for="lastName">Apellido</label>
-                    <input type="text" id="lastName" name="lastName" required>
-                </div>
+           
+            <div class="form-group">
+                <label for="firstName">Nombre</label>
+                <input type="text" id="firstName" name="firstName" required>
             </div>
-            
+
+            <div class="form-group">
+                <label for="lastName">Apellido</label>
+                <input type="text" id="lastName" name="lastName" required>
+            </div>
+             
             <div class="form-group">
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" required>
@@ -107,7 +107,7 @@
             
             console.log('Datos de registro:', userData);
             
-            alert('Cuenta creada exitosamente!');
+            window.location.href = 'home.html';
             // Redirigir a login o página principal
             // window.location.href = 'login.html';
         });

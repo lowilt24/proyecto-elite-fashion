@@ -1,9 +1,17 @@
 /* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: #fef5e7;
     min-height: 100vh;
     color: #333;
+    margin: 0;
+    padding: 0;
 }
 
 /* Títulos con fuente diferente*/

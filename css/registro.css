@@ -21,8 +21,8 @@ body {
     padding: 2rem;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    max-width: 400px;
-    width: 90%;
+    max-width: 450px;
+    width: 100%;
 }
 
 .register-header {
@@ -78,8 +78,26 @@ body {
     gap: 1rem;
 }
 
-.form-row .form-group {
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    width: 150px; 
+    margin-right: 10px;
+    text-align: left;
+    font-weight: none;
+}
+
+.form-group input {
     flex: 1;
+    padding: 8px;
+    font-size: 14px;
+    box-sizing: none;
+    max-width: 100%;
+    border-radius: 5px;
 }
 
 .checkbox-group {

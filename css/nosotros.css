@@ -1,0 +1,179 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fef5e7;
+    min-height: 100vh;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Títulos con fuente diferente*/
+h1, h2 {
+    font-family: 'Georgia', serif;
+    color: #003366;
+}
+
+/* Encabezado */
+header {
+    background-color: #d2b887;
+    padding: 10px 20px;
+    border-bottom: 4px solid #a3824f;
+}
+
+/* Banner superior */
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Logo */
+.logo {
+    height: 120px;
+}
+
+/* Barra de búsqueda */
+.busqueda {
+    display: flex;
+    align-items: center;
+    background-color: #bfa773;
+    border-radius: 20px;
+    overflow: hidden;
+    max-width: 400px;
+    width: 100%;
+}
+
+.busqueda input {
+    border: none;
+    padding: 8px 12px;
+    flex: 1;
+    background-color: transparent;
+    color: #fff;
+}
+
+.busqueda input::placeholder {
+    color: #fff;
+}
+
+.busqueda button {
+    background-color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.busqueda button img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+/* Redes sociales */
+
+.redes {
+    display: flex;
+    gap: 15px;
+}
+
+.redes a img {
+    width: 24px;       /* Tamaño del ícono */
+    height: 24px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.redes a img:hover {
+    transform: scale(1.1); /* Efecto al pasar el mouse */
+}
+
+/* Menú principal de navegación */
+.menu-principal {
+    background-color: #a3824f;
+}
+
+.menu-principal ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    padding: 10px 0;
+}
+
+.menu-principal a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.menu-principal a:hover {
+    color: #000;
+}
+
+/* Pie de página */
+footer {
+    background-color: #f3e2bd;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Menú secundario del footer */
+.menu-secundario ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.menu-secundario li {
+    margin: 0 15px;
+}
+
+.menu-secundario a {
+    text-decoration: none;
+    color: #333;
+}
+
+/*estilo para el bloque de divs*/
+.tarjetablock{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/*divs dentro del bloque*/
+.tarjeta{
+    background-color: #bfa773;
+    align-items: flex-start;
+    display: flex;
+    height: 200px;
+    width: 1200px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: solid black;
+}
+
+/*estilo para la img dentro del div dentro del bloque*/
+.tarjeta img{
+    border-radius: 20px;
+    margin-left: 5px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+/*estilo para el parrafo dentro del div dentro del bloque*/
+.tarjeta p{
+    font-family: Arial, sans-serif;
+    color: #fef5e7;
+    margin-top: 20px;
+}
