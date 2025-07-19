@@ -47,6 +47,11 @@
             <p>Gestiona tus productos y controla el stock</p>
         </div>
 
+        <div class="contenedor-botones">
+            <button id="conpedido" class=" btn conpedido">Consultar pedidos</button>
+            <button class="btn conpedido">Crear pedido</button>
+        </div>
+
         <!-- Estadísticas -->
         <div class="stats-grid">
             <div class="stat-card">
@@ -190,6 +195,14 @@
                 <button class="btn btn-primary" id="saveProductBtn">Agregar</button>
                 <button class="btn btn-secondary" id="cancelBtn">Cancelar</button>
             </div>
+        </div>
+    </div>
+
+    <div class="modal-pedido" id="pedidoModal" style="display: none;">
+        <div class="modal-content-pedido">
+            <span class="close-pedido" id="closePedido">&times;</span>
+            <h2>Pedidos</h2>
+            <p>Aquí puedes mostrar información de los pedidos...</p>
         </div>
     </div>
 

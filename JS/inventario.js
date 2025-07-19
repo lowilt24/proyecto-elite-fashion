@@ -66,6 +66,8 @@ const productMinStock = document.getElementById('productMinStock');
 const productSku = document.getElementById('productSku');
 const productDescription = document.getElementById('productDescription');
 
+
+
 // Inicializar la aplicación
 document.addEventListener('DOMContentLoaded', function() {
     updateStats();
@@ -257,7 +259,7 @@ function clearForm() {
 }
 
 // Validar formulario
-// Validar formulario
+
 function validateForm() {
     const requiredFields = [productName, productCategory, productPrice, productStock, productMinStock, productSku];
     
@@ -281,3 +283,26 @@ function validateForm() {
         return false;
     }
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    // ... tus otros eventListeners
+
+    // NUEVO: Modal Pedidos
+    const consultarPedidosBtn = document.getElementById('conpedido');
+    const pedidoModal = document.getElementById('pedidoModal');
+    const closePedidoBtn = document.getElementById('closePedido');
+
+    consultarPedidosBtn.addEventListener('click', () => {
+        pedidoModal.style.display = 'flex';
+    });
+
+    closePedidoBtn.addEventListener('click', () => {
+        pedidoModal.style.display = 'none';
+    });
+
+    pedidoModal.addEventListener('click', (e) => {
+        if (e.target === pedidoModal) {
+            pedidoModal.style.display = 'none';
+        }
+    });
+});
