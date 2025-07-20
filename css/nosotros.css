@@ -5,21 +5,6 @@
     box-sizing: border-box;
 }
 /* Contenido principal */
-main {
-    padding: 40px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-
-h1 {
-    font-family: Georgia, serif;
-    color: #003366;
-    text-align: center;
-    margin-bottom: 40px;
-    font-size: 2.5em;
-}
-
 /* Equipo */
 .equipo {
     display: grid;

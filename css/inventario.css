@@ -1,46 +1,9 @@
-/* Container principal */
-.container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 30px 24px;
-    min-height: calc(100vh - 300px);
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-
-/* titulo de página */
-.titulo {
-    margin-bottom: 40px;
-    text-align: center;
-}
-
-/* Estadísticas */
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    margin-bottom: 40px;
-}
-
-.stat-card {
-    background: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border: 1px solid #e5e7eb;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.stat-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
-}
-
-.stat-value {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #111827;
-    font-family: Arial, sans-serif;
-}
-
 /* Controles */
 .controls {
     background: white;
@@ -372,16 +335,6 @@
     animation: modalSlideIn 0.3s ease-out;
 }
 
-@keyframes modalSlideIn {
-    from {
-        opacity: 0;
-        transform: translateY(-50px) scale(0.9);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-}
 
 .modal-header {
     display: flex;

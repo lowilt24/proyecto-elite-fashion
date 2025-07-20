@@ -45,60 +45,30 @@
         </nav>
     </header>
  
-    <main class="container">
-                <!-- TÍTULO -->
-                <h1> Gestión de Pedidos</h1>
-                <p>Administra y supervisa todos los pedidos de tu negocio</p>
-
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-content">
-                        <div class="stat-info">
-                            <div class="stat-label">Pedidos Pendientes</div>
-                            <div class="stat-value yellow">23</div>
-                        </div>
-                        <div class="stat-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="stat-card">
-                    <div class="stat-content">
-                        <div class="stat-info">
-                            <div class="stat-label">En Proceso</div>
-                            <div class="stat-value blue">8</div>
-                        </div>
-                        <div class="stat-icon">
-                            <i class="fas fa-cogs"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="stat-card">
-                    <div class="stat-content">
-                        <div class="stat-info">
-                            <div class="stat-label">Completados Hoy</div>
-                            <div class="stat-value green">15</div>
-                        </div>
-                        <div class="stat-icon">
-                            <i class="fas fa-check-circle"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="stat-card">
-                    <div class="stat-content">
-                        <div class="stat-info">
-                            <div class="stat-label">Total del Día</div>
-                            <div class="stat-value blue">$2,450.00</div>
-                        </div>
-                        <div class="stat-icon">
-                            <i class="fas fa-dollar-sign"></i>
-                        </div>
-                    </div>
-                </div>
+    <main>
+            <!-- Estadísticas -->
+            <!-- TÍTULO -->
+        <h1 class="titulo-seccion">Gestion de pedidos</h1>
+        <p>Administra y supervisa todos los pedidos de tu negocio</p>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-value" id="totalProducts">0</div>
+                <div class="stat-label">Pedidos pendientes</div>
             </div>
+            <div class="stat-card">
+                <div class="stat-value" id="activeClients">0</div>
+                <div class="stat-label">En Proceso</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value red" id="completedToday">0</div>
+                <div class="stat-label">Completados Hoy</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="nuevosEstesMes">$2,450.00</div>
+                <div class="stat-label">Total del Día</div>
+            </div>
+        </div>
+
 
             <div class="controls">
                 <div class="controls-left">

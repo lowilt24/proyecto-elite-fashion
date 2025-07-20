@@ -149,3 +149,58 @@ footer {
     color: rgb(88, 43, 5);
     text-decoration: none;
 }
+/*secciones de todos los html*/
+.seccion {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 2000px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+/*main de todos*/
+main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 30px 24px;
+    min-height: calc(100vh - 300px);
+}
+
+/* Título principal */
+.titulo-seccion {
+    color:#a3824f; ;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 700;
+}
+/* Estadísticas */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.stat-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.stat-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #111827;
+    font-family: Arial, sans-serif;
+}

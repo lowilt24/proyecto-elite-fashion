@@ -46,8 +46,8 @@
         </nav>
     </header>
 
-    <section class="container">
-        <h2 class="titulo-seccion">Inventario</h2>
+<main>
+        <h1 class="titulo-seccion">Inventario</h1>
 
         <div class="contenedor-botones">
             <button id="conpedido" class="btn conpedido">
@@ -63,43 +63,20 @@
         <!-- Estadísticas -->
         <div class="stats-grid">
             <div class="stat-card">
-                <div class="stat-content">
-                    <div class="stat-info">
-                        <p class="stat-label">Total Productos</p>
-                        <p class="stat-value" id="totalProducts">0</p>
-                    </div>
-                    <i class="fas fa-tshirt stat-icon blue"></i>
-                </div>
+                <div class="stat-value" id="totalProducts">0</div>
+                <div class="stat-label">Total Productos</div>
             </div>
-
             <div class="stat-card">
-                <div class="stat-content">
-                    <div class="stat-info">
-                        <p class="stat-label">Stock Bajo</p>
-                        <p class="stat-value yellow" id="lowStockProducts">0</p>
-                    </div>
-                    <i class="fas fa-exclamation-triangle stat-icon yellow"></i>
-                </div>
+                <div class="stat-value" id="lowStockProducts">0</div>
+                <div class="stat-label">Stock Bajo</div>
             </div>
-
             <div class="stat-card">
-                <div class="stat-content">
-                    <div class="stat-info">
-                        <p class="stat-label">Sin Stock</p>
-                        <p class="stat-value red" id="outOfStockProducts">0</p>
-                    </div>
-                    <i class="fas fa-times-circle stat-icon red"></i>
-                </div>
+                <div class="stat-value" id="outOfStockProducts">0</div>
+                <div class="stat-label">Sin Stock</div>
             </div>
-
             <div class="stat-card">
-                <div class="stat-content">
-                    <div class="stat-info">
-                        <p class="stat-label">Categorías</p>
-                        <p class="stat-value green" id="totalCategories">0</p>
-                    </div>
-                    <i class="fas fa-tags stat-icon green"></i>
-                </div>
+                <div class="stat-value" id="totalCategories">0</div>
+                <p class="stat-label">Categorías</div>
             </div>
         </div>
 
@@ -172,7 +149,7 @@
                 </button>
             </div>
         </div>
-    </section>
+
 
     <!-- Modal para agregar/editar producto -->
     <div class="modal" id="productModal">
@@ -301,11 +278,10 @@
             </div>
         </div>
     </div>
-
-    <script src="../JS/inventario.js"></script>
+</main>
 
     <!-- PIE DE PÁGINA -->
-    <footer>
+        <footer>
         <!-- Menú secundario -->
         <nav class="menu-secundario">
             <ul>
@@ -321,6 +297,6 @@
 
         <!-- Logout -->
         <a href="login.html" class="logout">Cerrar sesión</a>
-    </footer>
+        </footer>
 </body>
 </html>
