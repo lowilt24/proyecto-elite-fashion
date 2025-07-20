@@ -14,12 +14,11 @@ body {
 /* Encabezado */
 header {
     background-color: #d2b887;
-    padding: 10px 20px;
-    border-bottom: 4px solid #a3824f;
 }
 
 /* Banner superior */
 .banner {
+    padding: 10px 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -27,8 +26,8 @@ header {
 }
 
 /* Logo */
-.logo { 
-    height: 120px; 
+.logo {
+    height: 120px;
 }
 
 /* Barra de búsqueda */
@@ -50,8 +49,8 @@ header {
     color: #fff;
 }
 
-.busqueda input::placeholder { 
-    color: #fff; 
+.busqueda input::placeholder {
+    color: #fff;
 }
 
 .busqueda button {
@@ -68,6 +67,7 @@ header {
 }
 
 /* Redes sociales */
+
 .redes {
     display: flex;
     gap: 15px;
@@ -84,6 +84,8 @@ header {
     transform: scale(1.1); /* Efecto al pasar el mouse */
 }
 
+
+
 /* Menú principal de navegación */
 .menu-principal {
     background-color: #a3824f;
@@ -93,7 +95,7 @@ header {
     display: flex;
     list-style: none;
     justify-content: space-around;
-    padding: 10px 0;
+    padding: 15px 0;
 }
 
 .menu-principal a {

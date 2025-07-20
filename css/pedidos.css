@@ -18,20 +18,82 @@ h1, h2 {
     color: #003366;
 }
 
-/* Header */
+/* Encabezado */
 header {
     background-color: #d2b887;
-    padding: 10px 20px;
-    border-bottom: 4px solid #a3824f;
 }
 
+/* Banner superior */
 .banner {
+    padding: 10px 20px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     flex-wrap: wrap;
 }
 
+/* Logo */
+.logo {
+    height: 120px;
+}
+
+/* Barra de búsqueda */
+.busqueda {
+    display: flex;
+    align-items: center;
+    background-color: #bfa773;
+    border-radius: 20px;
+    overflow: hidden;
+    max-width: 400px;
+    width: 100%;
+}
+
+.busqueda input {
+    border: none;
+    padding: 8px 12px;
+    flex: 1;
+    background-color: transparent;
+    color: #fff;
+}
+
+.busqueda input::placeholder {
+    color: #fff;
+}
+
+.busqueda button {
+    background-color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.busqueda button img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+/* Redes sociales */
+
+.redes {
+    display: flex;
+    gap: 15px;
+}
+
+.redes a img {
+    width: 24px;       /* Tamaño del ícono */
+    height: 24px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.redes a img:hover {
+    transform: scale(1.1); /* Efecto al pasar el mouse */
+}
+
+
+
+/* Menú principal de navegación */
 .menu-principal {
     background-color: #a3824f;
 }
@@ -40,7 +102,7 @@ header {
     display: flex;
     list-style: none;
     justify-content: space-around;
-    padding: 10px 0;
+    padding: 15px 0;
 }
 
 .menu-principal a {

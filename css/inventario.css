@@ -11,7 +11,6 @@ body {
     background-color: #fef5e7;
     min-height: 100vh;
     color: #333;
-    line-height: 1.6;
 }
 
 /* Títulos con fuente diferente */
@@ -23,12 +22,11 @@ h1, h2, h3, h4 {
 /* Encabezado */
 header {
     background-color: #d2b887;
-    padding: 10px 20px;
-    border-bottom: 4px solid #a3824f;
 }
 
 /* Banner superior */
 .banner {
+    padding: 10px 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -77,21 +75,24 @@ header {
 }
 
 /* Redes sociales */
+
 .redes {
     display: flex;
     gap: 15px;
 }
 
 .redes a img {
-    width: 24px;
+    width: 24px;       /* Tamaño del ícono */
     height: 24px;
     object-fit: contain;
     transition: transform 0.3s ease;
 }
 
 .redes a img:hover {
-    transform: scale(1.1);
+    transform: scale(1.1); /* Efecto al pasar el mouse */
 }
+
+
 
 /* Menú principal de navegación */
 .menu-principal {
@@ -102,7 +103,7 @@ header {
     display: flex;
     list-style: none;
     justify-content: space-around;
-    padding: 10px 0;
+    padding: 15px 0;
 }
 
 .menu-principal a {
@@ -124,20 +125,20 @@ header {
     min-height: calc(100vh - 300px);
 }
 
-/* Header de página */
-.header {
+/* titulo de página */
+.titulo {
     margin-bottom: 40px;
     text-align: center;
 }
 
-.header h1 {
+.titulo h1 {
     font-size: 2.5rem;
     font-weight: 700;
     color: #003366;
     margin-bottom: 8px;
 }
 
-.header p {
+.titulo p {
     color: #666;
     font-size: 1.2rem;
     font-weight: 300;
