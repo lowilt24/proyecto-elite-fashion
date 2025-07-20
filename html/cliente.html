@@ -3,276 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestión de Clientes</title>
+    <title>Clientes - ELITE FASHION</title>
+    <link rel="stylesheet" href="../css/home.css">
     <link rel="stylesheet" href="../css/clientes.css">
 </head>
 <body>
-        <!-- ENCABEZADO -->
+    <!-- ENCABEZADO -->
     <header>
         <div class="banner">
             <!-- Logo -->
             <img src="../imagenes/LOGOO.png" alt="Logo" class="logo">
 
-        <!-- Barra de búsqueda-->
-        <form class="busqueda" action="https://www.google.com/search" method="GET" target="_blank">
-            <input type="text" name="q" placeholder="Buscar...">
-            <button type="submit">
-                <img src="../imagenes/iconobusqueda.png" alt="Buscar" class="icono-buscar">
-            </button>
-        </form>
-
+            <!-- Barra de búsqueda-->
+            <form class="busqueda" action="https://www.google.com/search" method="GET" target="_blank">
+                <input type="text" name="q" placeholder="Buscar...">
+                <button type="submit">
+                    <img src="../imagenes/iconobusqueda.png" alt="Buscar" class="icono-buscar">
+                </button>
+            </form>
 
             <!-- Redes sociales -->
             <div class="redes">
-                <a href="#"><img src="../imagenes/iconoFacebook.png" alt="Facebook"></a>
+                <a href="https://www.facebook.com/share/14F1voSFVjR/?mibextid=wwXIfr" target="_blank">
+                    <img src="../imagenes/iconoFacebook.png" alt="Facebook">
+                </a>
                 <a href="#"><img src="../imagenes/iconoInstagram.png" alt="Instagram"></a>
                 <a href="#"><img src="../imagenes/iconotwiter.png" alt="Twitter"></a>
             </div>
+        </div>
     </header>
-            <!-- Menú principal de navegación -->
-        <nav class="menu-principal">
-            <ul>
-                <li><a href="home.html">Inicio</a></li>
-                <li><a href="Inventario.html">Inventario</a></li>
-                <li><a href="cliente.html">Clientes</a></li>
-                <li><a href="nosotros.html">Nosotros</a></li>
-            </ul>
-        </nav>
 
-    <div class="container">
-        <!-- Header -->
-        <div class="header">
-            <h1>Gestión de Clientes</h1>
-            <p>Administra tu cartera de clientes y mantén un registro completo</p>
-        </div>
+    <!-- Menú principal de navegación -->
+    <nav class="menu-principal">
+        <ul>
+            <li><a href="home.html">Inicio</a></li>
+            <li><a href="inventario.html">Inventario</a></li>
+            <li><a href="cliente.html">Clientes</a></li>
+            <li><a href="pedidos.html">Pedidos</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+        </ul>
+    </nav>
 
-        <!-- Estadísticas -->
-        <div class="stats-grid">
+    <!-- CONTENIDO PRINCIPAL -->
+    <section class="seccion">
+        <h2 class="titulo-seccion">Gestión de Clientes</h2>
+
+        <!-- Estadísticas rápidas -->
+        <div class="stats-rapidas">
             <div class="stat-card">
-                <div class="stat-content">
-                    <div class="stat-info">
-                        <p class="stat-label">Total Clientes</p>
-                        <p class="stat-value" id="totalClientes">0</p>
-                    </div>
-                    <i class="fas fa-users stat-icon blue"></i>
-                </div>
+                <div class="stat-value" id="totalClientes">0</div>
+                <div class="stat-label">Total Clientes</div>
             </div>
-
             <div class="stat-card">
-                <div class="stat-content">
-                    <div class="stat-info">
-                        <p class="stat-label">Clientes Activos</p>
-                        <p class="stat-value green" id="clientesActivos">0</p>
-                    </div>
-                    <i class="fas fa-user-check stat-icon green"></i>
-                </div>
+                <div class="stat-value" id="clientesActivos">0</div>
+                <div class="stat-label">Clientes Activos</div>
             </div>
-
             <div class="stat-card">
-                <div class="stat-content">
-                    <div class="stat-info">
-                        <p class="stat-label">Clientes Inactivos</p>
-                        <p class="stat-value red" id="clientesInactivos">0</p>
-                    </div>
-                    <i class="fas fa-user-times stat-icon red"></i>
-                </div>
-            </div>
-
-            <div class="stat-card">
-                <div class="stat-content">
-                    <div class="stat-info">
-                        <p class="stat-label">Nuevos este mes</p>
-                        <p class="stat-value purple" id="nuevosEsteMes">0</p>
-                    </div>
-                    <i class="fas fa-user-plus stat-icon purple"></i>
-                </div>
+                <div class="stat-value" id="nuevosEstesMes">0</div>
+                <div class="stat-label">Nuevos Este Mes</div>
             </div>
         </div>
 
-        <!-- Controles -->
-        <div class="controls">
-            <div class="controls-left">
-                <div class="search-box">
-                    <i class="fas fa-search"></i>
-                    <input type="text" id="searchInput" placeholder="Buscar clientes...">
-                </div>
-                
-                <div class="filter-box">
-                    <i class="fas fa-filter"></i>
-                    <select id="statusFilter">
-                        <option value="">Todos los estados</option>
-                        <option value="activo">Activos</option>
-                        <option value="inactivo">Inactivos</option>
-                    </select>
-                </div>
-
-                <div class="filter-box">
-                    <i class="fas fa-building"></i>
-                    <select id="tipoFilter">
-                        <option value="">Todos los tipos</option>
-                        <option value="empresa">Empresa</option>
-                        <option value="persona">Persona</option>
-                    </select>
-                </div>
-            </div>
-            
-            <button class="btn btn-primary" id="addClienteBtn">
-                <i class="fas fa-user-plus"></i>
-                Agregar Cliente
-            </button>
-        </div>
-
-        <!-- Vista de tarjetas/lista -->
-        <div class="view-controls">
-            <button class="view-btn active" id="gridViewBtn">
-                <i class="fas fa-th-large"></i>
-                Vista Tarjetas
-            </button>
-            <button class="view-btn" id="listViewBtn">
-                <i class="fas fa-list"></i>
-                Vista Lista
-            </button>
-        </div>
-
-        <!-- Contenido de clientes -->
-        <div class="clientes-container">
-            <!-- Vista de tarjetas -->
-            <div class="clientes-grid" id="clientesGrid">
-            </div>
-
-            <!-- Vista de lista -->
-            <div class="table-container" id="clientesTable" style="display: none;">
-                <table class="clientes-table">
-                    <thead>
-                        <tr>
-                            <th>Cliente</th>
-                            <th>Tipo</th>
-                            <th>Contacto</th>
-                            <th>Ubicación</th>
-                            <th>Estado</th>
-                            <th>Registro</th>
-                            <th>Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody id="clientesTableBody">
-                    </tbody>
-                </table>
-            </div>
-            
-            <div class="empty-state" id="emptyState" style="display: none;">
-                <i class="fas fa-users"></i>
-                <p>No se encontraron clientes</p>
+        <!-- Controles superiores -->
+        <div class="controles">
+            <button class="btn-primario" onclick="abrirModal()">+ Nuevo Cliente</button>
+            <div class="filtros">
+                <input type="text" id="buscarCliente" placeholder="Buscar por nombre o cédula..." style="width: 250px;">
+                <select id="filtroEstado">
+                    <option value="">Todos los estados</option>
+                    <option value="activo">Activos</option>
+                    <option value="inactivo">Inactivos</option>
+                </select>
             </div>
         </div>
-    </div>
+
+        <!-- Tabla de clientes -->
+        <div class="tabla-container">
+            <table class="tabla-clientes" id="tablaClientes">
+                <thead>
+                    <tr>
+                        <th>Cédula</th>
+                        <th>Nombre Completo</th>
+                        <th>Correo</th>
+                        <th>Teléfono</th>
+                        <th>Fecha Registro</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpoTabla">
+                    <!-- Los datos se cargarán aquí dinámicamente -->
+                </tbody>
+            </table>
+        </div>
+    </section>
 
     <!-- Modal para agregar/editar cliente -->
-    <div class="modal" id="clienteModal">
+    <div id="modalCliente" class="modal">
         <div class="modal-content">
-            <div class="modal-header">
-                <h2 id="modalTitle">Agregar Cliente</h2>
-                <button class="close-btn" id="closeModal">&times;</button>
-            </div>
-            
-            <div class="modal-body">
-                <div class="form-group">
-                    <label>Tipo de Cliente *</label>
-                    <select id="clienteTipo" required>
-                        <option value="">Seleccionar tipo</option>
-                        <option value="persona">Persona</option>
-                        <option value="empresa">Empresa</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label>Nombre/Razón Social *</label>
-                    <input type="text" id="clienteNombre" required>
-                </div>
-                
+            <span class="close" onclick="cerrarModal()">&times;</span>
+            <h2 id="tituloModal">Nuevo Cliente</h2>
+            <form id="formCliente">
                 <div class="form-row">
-                    <div class="form-group">
-                        <label>Email *</label>
-                        <input type="email" id="clienteEmail" required>
+                    <div class="form-grupo">
+                        <label for="cedula">Cédula *</label>
+                        <input type="text" id="cedula" name="cedula" required>
                     </div>
-                    
-                    <div class="form-group">
-                        <label>Teléfono *</label>
-                        <input type="tel" id="clienteTelefono" required>
+                    <div class="form-grupo">
+                        <label for="telefono">Teléfono *</label>
+                        <input type="tel" id="telefono" name="telefono" required>
                     </div>
                 </div>
 
                 <div class="form-row">
-                    <div class="form-group">
-                        <label>Documento *</label>
-                        <input type="text" id="clienteDocumento" required>
+                    <div class="form-grupo">
+                        <label for="nombre">Nombre *</label>
+                        <input type="text" id="nombre" name="nombre" required>
                     </div>
-                    
-                    <div class="form-group">
-                        <label>País *</label>
-                        <input type="text" id="clientePais" required>
+                    <div class="form-grupo">
+                        <label for="apellido">Apellido *</label>
+                        <input type="text" id="apellido" name="apellido" required>
                     </div>
                 </div>
 
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Ciudad *</label>
-                        <input type="text" id="clienteCiudad" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Estado</label>
-                        <select id="clienteEstado">
-                            <option value="activo">Activo</option>
-                            <option value="inactivo">Inactivo</option>
-                        </select>
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label>Dirección</label>
-                    <input type="text" id="clienteDireccion">
+                <div class="form-grupo">
+                    <label for="correo">Correo Electrónico *</label>
+                    <input type="email" id="correo" name="correo" required>
                 </div>
 
-                <div class="form-group">
-                    <label>Sitio Web</label>
-                    <input type="url" id="clienteWebsite">
+                <div class="form-grupo">
+                    <label for="direccion">Dirección *</label>
+                    <textarea id="direccion" name="direccion" rows="3" required></textarea>
                 </div>
-                
-                <div class="form-group">
-                    <label>Notas</label>
-                    <textarea id="clienteNotas" rows="3" placeholder="Información adicional sobre el cliente..."></textarea>
+
+                <div class="form-botones">
+                    <button type="button" class="btn-cancelar" onclick="cerrarModal()">Cancelar</button>
+                    <button type="submit" class="btn-primario">Guardar Cliente</button>
                 </div>
-            </div>
-            
-            <div class="modal-footer">
-                <button class="btn btn-primary" id="saveClienteBtn">Agregar</button>
-                <button class="btn btn-secondary" id="cancelBtn">Cancelar</button>
-            </div>
+            </form>
         </div>
     </div>
 
-    <!-- Modal para ver detalles del cliente -->
-    <div class="modal" id="detallesModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Detalles del Cliente</h2>
-                <button class="close-btn" id="closeDetallesModal">&times;</button>
-            </div>
-            
-            <div class="modal-body">
-                <div class="cliente-detalles" id="clienteDetalles">
-                </div>
-            </div>
-            
-            <div class="modal-footer">
-                <button class="btn btn-secondary" id="closeDetallesBtn">Cerrar</button>
-            </div>
-        </div>
-    </div>
-
-    <script src="../css/clientes.css"></script>
+    <!-- PIE DE PÁGINA -->
     <footer>
-        <!-- Menú secundario -->
         <nav class="menu-secundario">
             <ul>
                 <li><a href="home.html">Inicio</a></li>
@@ -281,12 +153,10 @@
                 <li><a href="registro.html">Registro</a></li>
             </ul>
         </nav>
-
-        <!-- Derechos -->
-        <p>&copy; 2025 ELITE FASHION . Todos los derechos reservados.</p>
-
-        <!-- Logout -->
+        <p>&copy; 2025 ELITE FASHION. Todos los derechos reservados.</p>
         <a href="login.html" class="logout">Cerrar sesión</a>
     </footer>
+
+    <script src="../js/clientes.js"></script>
 </body>
 </html>

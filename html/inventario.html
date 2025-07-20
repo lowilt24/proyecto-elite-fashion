@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Inventario</title>
+    <title>Sistema de Inventario - Elite Fashion</title>
     <link rel="stylesheet" href="../css/inventario.css">
 </head>
 <body>
@@ -14,14 +14,13 @@
             <!-- Logo -->
             <img src="../imagenes/LOGOO.png" alt="Logo" class="logo">
 
-        <!-- Barra de búsqueda-->
-        <form class="busqueda" action="https://www.google.com/search" method="GET" target="_blank">
-            <input type="text" name="q" placeholder="Buscar...">
-            <button type="submit">
-                <img src="../imagenes/iconobusqueda.png" alt="Buscar" class="icono-buscar">
-            </button>
-        </form>
-
+            <!-- Barra de búsqueda-->
+            <form class="busqueda" action="https://www.google.com/search" method="GET" target="_blank">
+                <input type="text" name="q" placeholder="Buscar...">
+                <button type="submit">
+                    <img src="../imagenes/iconobusqueda.png" alt="Buscar" class="icono-buscar">
+                </button>
+            </form>
 
             <!-- Redes sociales -->
             <div class="redes">
@@ -29,27 +28,36 @@
                 <a href="#"><img src="../imagenes/iconoInstagram.png" alt="Instagram"></a>
                 <a href="#"><img src="../imagenes/iconotwiter.png" alt="Twitter"></a>
             </div>
+        </div>
     </header>
 
-        <!-- Menú principal de navegación -->
+    <!-- Menú principal de navegación -->
     <nav class="menu-principal">
         <ul>
             <li><a href="home.html">Inicio</a></li>
-            <li><a href="Inventario.html">Inventario</a></li>
+            <li><a href="inventario.html">Inventario</a></li>
             <li><a href="cliente.html">Clientes</a></li>
+            <li><a href="pedidos.html">Pedidos</a></li>
             <li><a href="nosotros.html">Nosotros</a></li>
         </ul>
     </nav>
+
     <div class="container">
         <!-- Header -->
         <div class="header">
-            <h1>Inventario</h1>
-            <p>Gestiona tus productos y controla el stock</p>
+            <h1>Gestión de Inventario</h1>
+            <p>Controla productos, stock y categorías de Elite Fashion</p>
         </div>
 
         <div class="contenedor-botones">
-            <button id="conpedido" class=" btn conpedido">Consultar pedidos</button>
-            <button class="btn conpedido">Crear pedido</button>
+            <button id="conpedido" class="btn conpedido">
+                <i class="fas fa-shopping-cart"></i>
+                Consultar Pedidos
+            </button>
+            <button id="crearPedido" class="btn conpedido">
+                <i class="fas fa-plus-circle"></i>
+                Crear Pedido
+            </button>
         </div>
 
         <!-- Estadísticas -->
@@ -60,7 +68,7 @@
                         <p class="stat-label">Total Productos</p>
                         <p class="stat-value" id="totalProducts">0</p>
                     </div>
-                    <i class="fas fa-box stat-icon blue"></i>
+                    <i class="fas fa-tshirt stat-icon blue"></i>
                 </div>
             </div>
 
@@ -80,17 +88,17 @@
                         <p class="stat-label">Sin Stock</p>
                         <p class="stat-value red" id="outOfStockProducts">0</p>
                     </div>
-                    <i class="fas fa-exclamation-triangle stat-icon red"></i>
+                    <i class="fas fa-times-circle stat-icon red"></i>
                 </div>
             </div>
 
             <div class="stat-card">
                 <div class="stat-content">
                     <div class="stat-info">
-                        <p class="stat-label">Valor Total</p>
-                        <p class="stat-value green" id="totalValue">$0.00</p>
+                        <p class="stat-label">Categorías</p>
+                        <p class="stat-value green" id="totalCategories">0</p>
                     </div>
-                    <i class="fas fa-dollar-sign stat-icon green"></i>
+                    <i class="fas fa-tags stat-icon green"></i>
                 </div>
             </div>
         </div>
@@ -100,7 +108,7 @@
             <div class="controls-left">
                 <div class="search-box">
                     <i class="fas fa-search"></i>
-                    <input type="text" id="searchInput" placeholder="Buscar productos...">
+                    <input type="text" id="searchInput" placeholder="Buscar por nombre, marca o color...">
                 </div>
                 
                 <div class="filter-box">
@@ -109,12 +117,27 @@
                         <option value="">Todas las categorías</option>
                     </select>
                 </div>
+
+                <div class="filter-box">
+                    <i class="fas fa-toggle-on"></i>
+                    <select id="statusFilter">
+                        <option value="">Todos los estados</option>
+                        <option value="ACTIVO">Activo</option>
+                        <option value="INACTIVO">Inactivo</option>
+                    </select>
+                </div>
             </div>
             
-            <button class="btn btn-primary" id="addProductBtn">
-                <i class="fas fa-plus"></i>
-                Agregar Producto
-            </button>
+            <div class="controls-right">
+                <button class="btn btn-secondary" id="manageCategoriesBtn">
+                    <i class="fas fa-tags"></i>
+                    Gestionar Categorías
+                </button>
+                <button class="btn btn-primary" id="addProductBtn">
+                    <i class="fas fa-plus"></i>
+                    Nuevo Producto
+                </button>
+            </div>
         </div>
 
         <!-- Tabla de productos -->
@@ -122,9 +145,12 @@
             <table class="products-table">
                 <thead>
                     <tr>
+                        <th>ID</th>
                         <th>Producto</th>
                         <th>Categoría</th>
-                        <th>SKU</th>
+                        <th>Marca</th>
+                        <th>Color</th>
+                        <th>Talla</th>
                         <th>Precio</th>
                         <th>Stock</th>
                         <th>Estado</th>
@@ -132,12 +158,18 @@
                     </tr>
                 </thead>
                 <tbody id="productsTableBody">
+                    <!-- Los datos se cargarán dinámicamente -->
                 </tbody>
             </table>
             
             <div class="empty-state" id="emptyState" style="display: none;">
-                <i class="fas fa-box"></i>
-                <p>No se encontraron productos</p>
+                <i class="fas fa-tshirt"></i>
+                <h3>No hay productos disponibles</h3>
+                <p>Comienza agregando tu primer producto al inventario</p>
+                <button class="btn btn-primary" onclick="document.getElementById('addProductBtn').click()">
+                    <i class="fas fa-plus"></i>
+                    Agregar Producto
+                </button>
             </div>
         </div>
     </div>
@@ -151,58 +183,122 @@
             </div>
             
             <div class="modal-body">
-                <div class="form-group">
-                    <label>Nombre *</label>
-                    <input type="text" id="productName" required>
-                </div>
-                
-                <div class="form-group">
-                    <label>Categoría *</label>
-                    <input type="text" id="productCategory" required>
-                </div>
-                
-                <div class="form-row">
+                <form id="productForm">
+                    <input type="hidden" id="productId">
+                    
                     <div class="form-group">
-                        <label>Precio *</label>
-                        <input type="number" id="productPrice" step="0.01" required>
+                        <label for="productName">Nombre del Producto *</label>
+                        <input type="text" id="productName" required maxlength="200" placeholder="Ej: Camiseta Polo Clásica">
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="productCategory">Categoría *</label>
+                            <select id="productCategory" required>
+                                <option value="">Seleccionar categoría</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="productPrice">Precio *</label>
+                            <input type="number" id="productPrice" step="0.01" min="0" required placeholder="0.00">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="productMarca">Marca</label>
+                            <input type="text" id="productMarca" maxlength="100" placeholder="Ej: Nike, Adidas">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="productColor">Color</label>
+                            <input type="text" id="productColor" maxlength="50" placeholder="Ej: Azul, Rojo">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="productTalla">Talla</label>
+                            <input type="text" id="productTalla" maxlength="20" placeholder="Ej: S, M, L, XL">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="productStock">Stock Inicial *</label>
+                            <input type="number" id="productStock" min="0" required placeholder="0">
+                        </div>
                     </div>
                     
                     <div class="form-group">
-                        <label>SKU *</label>
-                        <input type="text" id="productSku" required>
+                        <label for="productEstado">Estado</label>
+                        <select id="productEstado">
+                            <option value="ACTIVO">Activo</option>
+                            <option value="INACTIVO">Inactivo</option>
+                        </select>
                     </div>
-                </div>
-                
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Stock *</label>
-                        <input type="number" id="productStock" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Stock Mínimo *</label>
-                        <input type="number" id="productMinStock" required>
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label>Descripción</label>
-                    <textarea id="productDescription" rows="3"></textarea>
-                </div>
+                </form>
             </div>
             
             <div class="modal-footer">
-                <button class="btn btn-primary" id="saveProductBtn">Agregar</button>
-                <button class="btn btn-secondary" id="cancelBtn">Cancelar</button>
+                <button type="button" class="btn btn-primary" id="saveProductBtn">
+                    <i class="fas fa-save"></i>
+                    Guardar
+                </button>
+                <button type="button" class="btn btn-secondary" id="cancelBtn">Cancelar</button>
             </div>
         </div>
     </div>
 
+    <!-- Modal para gestionar categorías -->
+    <div class="modal" id="categoryModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Gestionar Categorías</h2>
+                <button class="close-btn" id="closeCategoryModal">&times;</button>
+            </div>
+            
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="newCategoryName">Nueva Categoría</label>
+                    <div class="input-group">
+                        <input type="text" id="newCategoryName" placeholder="Nombre de la categoría" maxlength="100">
+                        <button type="button" class="btn btn-primary" id="addCategoryBtn">
+                            <i class="fas fa-plus"></i>
+                            Agregar
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="categories-list">
+                    <h4>Categorías Existentes:</h4>
+                    <div id="categoriesList">
+                        <!-- Las categorías se cargarán aquí -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para consultar pedidos -->
     <div class="modal-pedido" id="pedidoModal" style="display: none;">
         <div class="modal-content-pedido">
             <span class="close-pedido" id="closePedido">&times;</span>
-            <h2>Pedidos</h2>
-            <p>Aquí puedes mostrar información de los pedidos...</p>
+            <h2>Pedidos Actuales</h2>
+            <div id="pedidosContent">
+                <div class="pedidos-filters">
+                    <select id="estadoPedidoFilter">
+                        <option value="">Todos los estados</option>
+                        <option value="PENDIENTE">Pendiente</option>
+                        <option value="PROCESANDO">Procesando</option>
+                        <option value="ENVIADO">Enviado</option>
+                        <option value="ENTREGADO">Entregado</option>
+                        <option value="CANCELADO">Cancelado</option>
+                    </select>
+                </div>
+                <div id="pedidosList">
+                    <!-- Los pedidos se cargarán aquí -->
+                </div>
+            </div>
         </div>
     </div>
 
@@ -221,7 +317,7 @@
         </nav>
 
         <!-- Derechos -->
-        <p>&copy; 2025 ELITE FASHION . Todos los derechos reservados.</p>
+        <p>&copy; 2025 ELITE FASHION. Todos los derechos reservados.</p>
 
         <!-- Logout -->
         <a href="login.html" class="logout">Cerrar sesión</a>

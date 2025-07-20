@@ -1,0 +1,166 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fef5e7;
+    color: #333;
+    min-height: 100vh;
+}
+
+h1, h2 {
+    font-family: 'Georgia', serif;
+    color: #003366;
+}
+
+/* Header */
+header {
+    background-color: #d2b887;
+    padding: 10px 20px;
+    border-bottom: 4px solid #a3824f;
+}
+
+.banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.menu-principal {
+    background-color: #a3824f;
+}
+
+.menu-principal ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    padding: 10px 0;
+}
+
+.menu-principal a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.menu-principal a:hover {
+    color: #000;
+}
+
+/* Container y secciones */
+.container, .seccion {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 1200px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+    color: #a3824f;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+/* Cards y estadísticas */
+.stats-grid, .dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.stat-card, .card {
+    background: #a3824f;
+    color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover, .card:hover {
+    transform: scale(1.05);
+}
+
+/* Controles */
+.controls {
+    background: white;
+    padding: 1rem;
+    border-radius: 10px;
+    margin: 1rem 0;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.controls input, .controls select, .btn {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.btn {
+    background: #a3824f;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #8b7355;
+}
+
+/* Tabla */
+.table-container {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 1rem 0;
+}
+
+.products-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.products-table th {
+    background: #a3824f;
+    color: white;
+    padding: 1rem;
+}
+
+.products-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+/* Footer */
+footer {
+    background-color: #f3e2bd;
+    text-align: center;
+    padding: 20px;
+}
+
+.menu-secundario ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 1rem;
+}
+
+.menu-secundario a {
+    color: #333;
+    text-decoration: none;
+}
