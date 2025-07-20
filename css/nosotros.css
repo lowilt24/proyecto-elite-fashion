@@ -1,120 +1,16 @@
-/* Reset y estilos base */
-* { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-
-body {
-    font-family: Arial, sans-serif;
-    background: #fef5e7;
-    color: #333;
-}
-
-/* Encabezado */
-header {
-    background-color: #d2b887;
-}
-
-/* Banner superior */
-.banner {
-    padding: 10px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-/* Logo */
-.logo {
-    height: 120px;
-}
-
-/* Barra de búsqueda */
-.busqueda {
-    display: flex;
-    align-items: center;
-    background-color: #bfa773;
-    border-radius: 20px;
-    overflow: hidden;
-    max-width: 400px;
-    width: 100%;
-}
-
-.busqueda input {
-    border: none;
-    padding: 8px 12px;
-    flex: 1;
-    background-color: transparent;
-    color: #fff;
-}
-
-.busqueda input::placeholder {
-    color: #fff;
-}
-
-.busqueda button {
-    background-color: white;
-    border: none;
-    padding: 8px 12px;
-    cursor: pointer;
-}
-
-.busqueda button img {
-    width: 20px;
-    height: 20px;
-    object-fit: contain;
-}
-
-/* Redes sociales */
-
-.redes {
-    display: flex;
-    gap: 15px;
-}
-
-.redes a img {
-    width: 24px;       /* Tamaño del ícono */
-    height: 24px;
-    object-fit: contain;
-    transition: transform 0.3s ease;
-}
-
-.redes a img:hover {
-    transform: scale(1.1); /* Efecto al pasar el mouse */
-}
-
-
-
-/* Menú principal de navegación */
-.menu-principal {
-    background-color: #a3824f;
-}
-
-.menu-principal ul {
-    display: flex;
-    list-style: none;
-    justify-content: space-around;
-    padding: 15px 0;
-}
-
-.menu-principal a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.menu-principal a:hover {
-    color: #000;
-}
-
 /* Contenido principal */
 main {
     padding: 40px 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
+
 
 h1 {
     font-family: Georgia, serif;
@@ -165,58 +61,3 @@ h1 {
     margin-bottom: 5px;
 }
 
-/* Pie de página */
-footer {
-    background-color: #f3e2bd;
-    text-align: center;
-    padding: 20px;
-}
-
-/* Menú secundario del footer */
-.menu-secundario ul {
-    list-style: none;
-    padding: 0;
-    margin: 10px 0;
-    display: flex;
-    justify-content: center;
-}
-
-.menu-secundario li {
-    margin: 0 15px;
-}
-
-.menu-secundario a {
-    text-decoration: none;
-    color: #333;
-}
-
-/* Enlace de cerrar sesión */
-.logout {
-    display: block;
-    margin-top: 10px;
-    color: rgb(88, 43, 5);
-    text-decoration: none;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .banner { 
-        flex-direction: column; 
-        text-align: center; 
-    }
-    
-    .miembro { 
-        flex-direction: column; 
-        text-align: center; 
-    }
-    
-    .menu-principal ul { 
-        flex-direction: column; 
-        gap: 15px; 
-    }
-    
-    .menu-secundario ul { 
-        flex-direction: column; 
-        gap: 15px; 
-    }
-}
