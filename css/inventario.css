@@ -94,14 +94,6 @@
     transform: translateY(-1px);
 }
 
-/* Tabla */
-.table-container {
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border: 1px solid #e5e7eb;
-    overflow: hidden;
-}
 
 .products-table {
     width: 100%;
@@ -109,12 +101,12 @@
 }
 
 .products-table th {
-    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    background-color: #a3824f;
     padding: 18px 20px;
     text-align: left;
     font-size: 0.8rem;
     font-weight: 700;
-    color: #374151;
+    color: white;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     border-bottom: 2px solid #e5e7eb;

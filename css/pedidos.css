@@ -22,13 +22,6 @@
     border-radius: 8px;
 }
 
-/* Tabla */
-.table-container {
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
-    margin: 1rem 0;
-}
 
 .products-table {
     width: 100%;

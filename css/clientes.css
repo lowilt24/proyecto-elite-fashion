@@ -43,11 +43,6 @@
     background-color: white;
 }
 
-/* Tabla de clientes */
-.tabla-container {
-    overflow-x: auto;
-    margin-bottom: 2rem;
-}
 
 .tabla-clientes {
     width: 100%;
@@ -127,7 +122,6 @@
 
 /* Formulario */
 
-
 .form-botones {
     display: flex;
     gap: 1rem;
@@ -166,11 +160,11 @@
 }
 
 /* Indicadores de validación */
-.form-grupo input.error {
+.form-group input.error {
     border-color: #dc3545;
 }
 
-.form-grupo .mensaje-error {
+.form-group .mensaje-error {
     color: #dc3545;
     font-size: 0.85rem;
     margin-top: 5px;
