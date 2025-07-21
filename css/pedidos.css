@@ -22,19 +22,6 @@
     border-radius: 8px;
 }
 
-.btn {
-    background: #a3824f;
-    color: white;
-    border: none;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background 0.3s ease;
-}
-
-.btn:hover {
-    background: #8b7355;
-}
-
 /* Tabla */
 .table-container {
     background: white;

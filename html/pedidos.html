@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestión de Pedidos - Sistema de Inventario</title>
     <link rel="stylesheet" href="../css/pedidos.css">
-    <link rel="stylesheet" href="../css/header y footer.css">
+    <link rel="stylesheet" href="../css/principal.css">
 </head>
 <body>
     <!-- ENCABEZADO -->
@@ -49,7 +49,6 @@
             <!-- Estadísticas -->
             <!-- TÍTULO -->
         <h1 class="titulo-seccion">Gestion de pedidos</h1>
-        <p>Administra y supervisa todos los pedidos de tu negocio</p>
         <div class="stats-grid">
             <div class="stat-card">
                 <div class="stat-value" id="totalProducts">0</div>
@@ -196,9 +195,9 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h2 id="modalTitle">Nuevo Pedido</h2>
-                <button class="close-btn" onclick="closeModal()">&times;</button>
+                <button class="closebtn-btn" onclick="closebtnModal()">&times;</button>
             </div>
-            <div class="modal-body">
+            <div class="modal-content">
                 <form id="orderForm">
                     <div class="form-row">
                         <div class="form-group">
@@ -260,7 +259,7 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" onclick="closeModal()">Cancelar</button>
+                <button type="button" class="btn btn-secondary" onclick="closebtnModal()">Cancelar</button>
                 <button type="submit" class="btn btn-primary" onclick="saveOrder()">Guardar Pedido</button>
             </div>
         </div>
@@ -290,7 +289,7 @@
             document.getElementById('orderModal').classList.add('active');
         }
 
-        function closeModal() {
+        function closebtn() {
             document.getElementById('orderModal').classList.remove('active');
         }
 
@@ -309,7 +308,7 @@
 
         function saveOrder() {
             // Lógica para guardar pedido
-            closeModal();
+            closebtn();
         }
 
         // Event listener para abrir modal de nuevo pedido
@@ -322,7 +321,7 @@
         // Cerrar modal al hacer click fuera de él
         document.getElementById('orderModal').addEventListener('click', function(e) {
             if (e.target === this) {
-                closeModal();
+                closebtn();
             }
         });
     </script>
